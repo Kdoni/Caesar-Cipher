@@ -4,14 +4,15 @@ def cipher (string,number=0)
     word_array=string.split("")
     for letter in word_array do
         alphabet.each_with_index do |word,index|
-            if word.capitalize == letter
-                p letter
-                counter+=alphabet[index+number].capitalize
-            elsif alphabet.include?(letter)==false
+            back_to_fortnite = (index+number) % 26
+            if alphabet.include?(letter.downcase)==false
                 counter+=letter
                 break
             elsif letter ==word
-                counter+=alphabet[index+number]
+                counter+=alphabet[back_to_fortnite]
+                break
+            elsif letter.downcase==word
+                counter+=alphabet[back_to_fortnite].capitalize
                 break
             end
         end
@@ -19,4 +20,4 @@ def cipher (string,number=0)
     counter
 end
 
-puts cipher("He7llo",5)
+puts cipher("Hz7lYo!..",150)
