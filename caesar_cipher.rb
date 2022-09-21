@@ -19,5 +19,3 @@ def cipher (string,number=0)
     end
     counter
 end
-
-puts cipher("Hz7lYo!..",150)
